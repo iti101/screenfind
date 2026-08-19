@@ -1,11 +1,10 @@
 .content-section {
-  height: 100vh;
+  min-height: 100%;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-dark);
-  color: #fff;
+  background: #0f766e;
+  color: #ffffff;
   font-size: 2rem;
-  font-weight: bold;
 }

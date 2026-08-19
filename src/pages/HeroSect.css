@@ -1,11 +1,10 @@
 .hero-section {
-  height: 100vh;
+  min-height: 100%;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-black);
-  color: #fff;
+  background: #111827;
+  color: #ffffff;
   font-size: 2rem;
-  font-weight: bold;
 }
