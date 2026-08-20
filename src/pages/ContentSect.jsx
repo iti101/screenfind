@@ -2,7 +2,7 @@ import './ContentSect.css'
 
 function ContentSect() {
   return (
-    <section className="content-section">
+    <section id="features" className="content-section">
       <h1>Features</h1>
     </section>
   )

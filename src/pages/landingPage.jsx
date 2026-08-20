@@ -1,3 +1,4 @@
+import Navbar from '../components/Navbar.jsx'
 import HeroSect from './HeroSect.jsx'
 import ContentSect from './ContentSect.jsx'
 import ContactSect from './ContactSect.jsx'
@@ -6,6 +7,7 @@ import './landingPage.css'
 function LandingPage() {
   return (
     <main className="landing-page">
+      <Navbar />
       <HeroSect />
       <ContentSect />
       <ContactSect />
