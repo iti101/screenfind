@@ -1,4 +1,4 @@
-.navbar {
+  .navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -110,6 +110,7 @@
   border: none;
   background: transparent;
   color: #ffffff;
+  font-family: 'Nunito', sans-serif;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.02em;
