@@ -4,7 +4,7 @@ import './Navbar.css'
 
 const MENU_ITEMS = [
   { label: 'Home', id: 'home' },
-  { label: 'Features', id: 'features' },
+  { label: 'Search', id: 'search' },
   { label: 'Contact', id: 'contact' },
   { label: 'Sign-in' },
   { label: 'My Watchlist' },
