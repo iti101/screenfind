@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="20" y="30" font-family="Arial" font-size="16" font-weight="bold">Wireframe 5  Watchlist (private)</text>
+  <rect x="20" y="50" width="760" height="40" fill="none" stroke="#333"/>
+  <text x="40" y="110" font-family="Arial" font-size="20" font-weight="bold">My Watchlist</text>
+  <text x="40" y="135" font-family="Arial" font-size="11">Hello, user@example.com</text>
+  <rect x="40" y="170" width="220" height="100" fill="none" stroke="#333"/>
+  <text x="55" y="200" font-family="Arial" font-size="12">Title · Movie</text>
+  <text x="55" y="225" font-family="Arial" font-size="11">Status: [ to-watch ¾ ]</text>
+  <text x="55" y="250" font-family="Arial" font-size="11">[ Remove ]</text>
+  <rect x="280" y="170" width="220" height="100" fill="none" stroke="#333"/>
+  <rect x="520" y="170" width="220" height="100" fill="none" stroke="#333"/>
+  <text x="20" y="470" font-family="Arial" font-size="11">PrivateRoute: redirect to /login if not authenticated. Empty state when list is empty.</text>
+</svg>

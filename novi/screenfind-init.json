@@ -1,0 +1,90 @@
+{
+  "name": "ScreenFind",
+  "description": "Persoonlijke watchlist voor films en series gekoppeld aan TMDB-ids",
+  "collections": [
+    {
+      "name": "watchlistItems",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "userEmail",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tmdbId",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "mediaType",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "posterPath",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "default": "to-watch"
+        }
+      ],
+      "permissions": {
+        "GET": ["user", "admin"],
+        "POST": ["user", "admin"],
+        "PUT": ["user", "admin"],
+        "PATCH": ["user", "admin"],
+        "DELETE": ["user", "admin"]
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "demo@screenfind.nl",
+      "password": "demo123",
+      "roles": ["user"],
+      "username": "demo"
+    },
+    {
+      "email": "admin@screenfind.nl",
+      "password": "admin123",
+      "roles": ["admin"],
+      "username": "admin"
+    }
+  ],
+  "data": {
+    "watchlistItems": [
+      {
+        "id": 1,
+        "userEmail": "demo@screenfind.nl",
+        "tmdbId": 550,
+        "mediaType": "movie",
+        "title": "Fight Club",
+        "posterPath": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+        "status": "to-watch"
+      },
+      {
+        "id": 2,
+        "userEmail": "demo@screenfind.nl",
+        "tmdbId": 1396,
+        "mediaType": "tv",
+        "title": "Breaking Bad",
+        "posterPath": "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        "status": "watching"
+      }
+    ]
+  }
+}

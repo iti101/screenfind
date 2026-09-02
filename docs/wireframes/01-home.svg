@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="20" y="30" font-family="Arial" font-size="16" font-weight="bold">Wireframe 1  Home</text>
+  <rect x="20" y="50" width="760" height="40" fill="none" stroke="#333"/>
+  <text x="40" y="75" font-family="Arial" font-size="12">[ hamburger ] ........................ [ login icon ]</text>
+  <rect x="150" y="180" width="500" height="80" fill="none" stroke="#333" stroke-dasharray="6 4"/>
+  <text x="250" y="225" font-family="Arial" font-size="18">Typewriter: Find any episode|</text>
+  <text x="20" y="470" font-family="Arial" font-size="11">Zones: fixed navbar, centered hero copy, scroll hint optional</text>
+</svg>
