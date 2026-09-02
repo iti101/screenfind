@@ -1,9 +1,0 @@
-.landing-page {
-  height: 100%;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-}
-
-.landing-page:has(.navbar__overlay--open) {
-  overflow: hidden;
-}
