@@ -6,7 +6,7 @@
 |---|---|
 | Student | [vul naam in] |
 | Inleverdatum | [vul in] |
-| GitHub repository | `[plak publieke repo-URL]` |
+| GitHub repository | https://github.com/iti101/screenfind |
 
 ---
 
