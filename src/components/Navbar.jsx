@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import loginIcon from '../assets/ICON-login-user-account.svg'
+import { useAuth } from '../context/AuthContext.jsx'
 import './Navbar.css'
 
 const MENU_ITEMS = [
-  { label: 'Home', id: 'home' },
-  { label: 'Search', id: 'search' },
-  { label: 'Contact', id: 'contact' },
-  { label: 'Sign-in' },
-  { label: 'My Watchlist' },
+  { label: 'Home', to: '/' },
+  { label: 'Search', to: '/search' },
+  { label: 'Contact', to: '/contact' },
+  { label: 'Sign-in', to: '/login', guestOnly: true },
+  { label: 'Register', to: '/register', guestOnly: true },
+  { label: 'My Watchlist', to: '/watchlist', authOnly: true },
 ]
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { isAuth, logout, user } = useAuth()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!isOpen) return
@@ -24,11 +29,16 @@ function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen])
 
-  const handleMenuItemClick = (item) => {
-    if (item.id) {
-      document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
-    }
+  const visibleItems = MENU_ITEMS.filter((item) => {
+    if (item.authOnly && !isAuth) return false
+    if (item.guestOnly && isAuth) return false
+    return true
+  })
+
+  const handleLogout = () => {
+    logout()
     setIsOpen(false)
+    navigate('/')
   }
 
   return (
@@ -46,9 +56,14 @@ function Navbar() {
           <span className="navbar__hamburger-bar" />
         </button>
 
-        <button type="button" className="navbar__login" aria-label="Login">
+        <Link
+          to={isAuth ? '/watchlist' : '/login'}
+          className="navbar__login"
+          aria-label={isAuth ? 'Open watchlist' : 'Login'}
+          onClick={() => setIsOpen(false)}
+        >
           <img src={loginIcon} alt="" className="navbar__login-icon" />
-        </button>
+        </Link>
       </header>
 
       <div
@@ -56,18 +71,34 @@ function Navbar() {
         aria-hidden={!isOpen}
       >
         <nav aria-label="Main navigation">
+          {isAuth && user && (
+            <p className="navbar__user">Signed in as {user.username || user.email}</p>
+          )}
           <ul className="navbar__menu-list">
-            {MENU_ITEMS.map((item) => (
-              <li key={item.label}>
+            {visibleItems.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `navbar__menu-link${isActive ? ' navbar__menu-link--active' : ''}`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+            {isAuth && (
+              <li>
                 <button
                   type="button"
                   className="navbar__menu-link"
-                  onClick={() => handleMenuItemClick(item)}
+                  onClick={handleLogout}
                 >
-                  {item.label}
+                  Sign out
                 </button>
               </li>
-            ))}
+            )}
           </ul>
         </nav>
       </div>

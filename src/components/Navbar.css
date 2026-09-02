@@ -106,6 +106,7 @@
 }
 
 .navbar__menu-link {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
   border: none;
   background: transparent;
@@ -116,6 +117,7 @@
   letter-spacing: 0.02em;
   cursor: pointer;
   border-radius: 8px;
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
